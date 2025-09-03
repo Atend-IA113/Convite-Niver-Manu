@@ -14,7 +14,7 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
       // Removido o onClick do Card para que apenas o botão seja clicável
     >
       {/* Top Glittery Section */}
-      <div className="relative h-[250px] bg-gradient-to-br from-rose-gold-medium to-rose-gold-accent flex items-center justify-center overflow-hidden">
+      <div className="relative h-[250px] bg-blush flex items-center justify-center overflow-hidden">
         {/* Sparkles for glitter effect */}
         {[...Array(30)].map((_, i) => (
           <Sparkles
@@ -30,7 +30,7 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
           />
         ))}
         {/* "15" text */}
-        <span className="absolute text-white text-[150px] font-bold leading-none z-10">
+        <span className="absolute text-rose-gold-dark text-[150px] font-bold leading-none z-10">
           15
         </span>
         {/* "Anos" text with typing animation */}
@@ -75,7 +75,7 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
       <div className="p-8 pt-0 text-center relative z-10">
         <Button
           onClick={onOpen}
-          className="w-full h-12 bg-rose-gold-light text-rose-gold-dark border border-rose-gold-medium hover:bg-rose-gold-medium hover:text-white transition-all duration-300 text-lg font-semibold"
+          className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
         >
           Abrir Convite
         </Button>
