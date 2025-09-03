@@ -49,6 +49,12 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Rose Gold Palette */
+    --rose-gold-light: 350 20% 95%; /* Very light, warm pink */
+    --rose-gold-medium: 350 30% 80%; /* Slightly deeper pink-gold */
+    --rose-gold-dark: 350 15% 40%; /* Muted, warm brown-pink for text */
+    --rose-gold-accent: 350 40% 70%; /* More vibrant accent */
   }
 
   .dark {

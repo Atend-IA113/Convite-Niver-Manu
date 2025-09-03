@@ -65,6 +65,12 @@ export default {
         // Custom colors for the invitation theme
         blush: "#F4C2C2", // A light pink/rose color
         champagne: "#F7E7CE", // A light gold/cream color
+        "rose-gold": {
+          light: "hsl(var(--rose-gold-light))",
+          medium: "hsl(var(--rose-gold-medium))",
+          dark: "hsl(var(--rose-gold-dark))",
+          accent: "hsl(var(--rose-gold-accent))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
