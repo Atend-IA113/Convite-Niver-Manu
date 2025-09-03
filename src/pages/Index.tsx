@@ -3,7 +3,7 @@ import { InvitationCard } from "@/components/InvitationCard";
 import { InvitationMenu } from "@/components/InvitationMenu";
 import { LocationPage } from "@/components/LocationPage";
 import { ConfirmationPage } from "@/components/ConfirmationPage";
-import { GiftListPage } from "@/components/GiftListPage";
+import { GiftListPage } from "@/components/GiftListPage/GiftListPage";
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-blush to-champagne overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br from-rose-gold-light via-blush to-champagne overflow-hidden relative">
       {/* Floating sparkles */}
       <div className="fixed inset-0 pointer-events-none">
         {[...Array(20)].map((_, i) => (
