@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
+import { TypingText } from "@/components/TypingText"; // Importando o novo componente
 
 interface InvitationCardProps {
   onOpen: () => void;
@@ -32,10 +33,12 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
         <span className="absolute text-white text-[150px] font-bold leading-none z-10">
           15
         </span>
-        {/* "sweet" text */}
-        <span className="absolute text-rose-gold-dark text-7xl font-serif italic z-20" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-          sweet
-        </span>
+        {/* "Anos" text with typing animation */}
+        <TypingText
+          text="Anos"
+          className="absolute text-rose-gold-dark text-7xl font-serif italic z-20"
+          style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+        />
       </div>
 
       {/* Main Content Section (light pink) */}
