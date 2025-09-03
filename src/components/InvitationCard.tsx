@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
 
@@ -8,8 +9,8 @@ interface InvitationCardProps {
 export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
   return (
     <Card
-      className="relative w-full max-w-md mx-auto border-0 shadow-xl animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col cursor-pointer"
-      onClick={onOpen}
+      className="relative w-full max-w-md mx-auto border-0 shadow-xl animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col"
+      // Removido o onClick do Card para que apenas o botão seja clicável
     >
       {/* Top Glittery Section */}
       <div className="relative h-[250px] bg-gradient-to-br from-rose-gold-medium to-rose-gold-accent flex items-center justify-center overflow-hidden">
@@ -89,6 +90,16 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
           ))}
         </div>
       </CardContent>
+      {/* Botão "Abrir Convite" */}
+      <div className="p-8 pt-0 text-center relative z-10">
+        <Button
+          onClick={onOpen}
+          className="w-full h-12 bg-rose-gold-light text-rose-gold-dark border border-rose-gold-medium hover:bg-rose-gold-medium hover:text-white transition-all duration-300 text-lg font-semibold"
+        >
+          Abrir Convite
+        </Button>
+        <p className="text-sm text-gray-500 mt-2">Toque para abrir</p>
+      </div>
     </Card>
   );
 };
