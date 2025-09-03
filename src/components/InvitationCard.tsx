@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
-import { TypingText } from "@/components/TypingText"; // Importando o novo componente
+// TypingText não é mais necessário, pois o texto "Anos" será removido
+// import { TypingText } from "@/components/TypingText"; 
 
 interface InvitationCardProps {
   onOpen: () => void;
@@ -11,7 +12,6 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
   return (
     <Card
       className="relative w-full max-w-md mx-auto border-0 animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col bg-blush"
-      // Removido o onClick do Card para que apenas o botão seja clicável
     >
       {/* Top Glittery Section */}
       <div className="relative h-[250px] bg-blush flex items-center justify-center overflow-hidden">
@@ -29,32 +29,20 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
             }}
           />
         ))}
-        {/* "15" text */}
-        <span className="absolute text-white text-[150px] font-bold leading-none z-10">
-          15
-        </span>
-        {/* "Anos" text with typing animation */}
-        <TypingText
-          text="Anos"
-          className="absolute text-rose-gold-dark text-7xl font-great-vibes italic z-20" // Aplicado font-great-vibes
-          style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-        />
+        {/* O texto "15" e "Anos" foi removido daqui */}
       </div>
 
-      {/* Main Content Section (light pink) */}
-      <CardContent className="flex-grow p-8 text-center relative z-10 bg-blush flex flex-col justify-between">
-        {/* Descriptive text */}
-        <p className="text-sm text-rose-gold-dark mb-6 leading-relaxed">
-          Há momentos inesquecíveis que são guardados no coração para sempre.
-          Por essa razão, quero compartilhar este dia especial com você.
-          Sua presença trará ainda mais alegria e significado a esta ocasião.
-          Vamos criar memórias juntos que durarão uma vida inteira.
-        </p>
-
-        {/* Name */}
-        <h2 className="text-5xl font-great-vibes italic text-rose-gold-dark mb-8"> {/* Aplicado font-great-vibes */}
-          Emanuelle
-        </h2>
+      {/* Main Content Section with Button */}
+      <CardContent className="flex-grow p-8 text-center relative z-10 bg-blush flex flex-col justify-center items-center"> {/* Adicionado justify-center e items-center */}
+        {/* O texto descritivo e o nome "Emanuelle" foram removidos daqui */}
+        
+        <Button
+          onClick={onOpen}
+          className="w-full max-w-xs h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
+        >
+          Abrir Convite
+        </Button>
+        <p className="text-sm text-gray-500 mt-2">Toque para abrir</p>
 
         {/* Confetti at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden">
@@ -71,16 +59,7 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
           ))}
         </div>
       </CardContent>
-      {/* Botão "Abrir Convite" */}
-      <div className="p-8 pt-0 text-center relative z-10 bg-blush">
-        <Button
-          onClick={onOpen}
-          className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
-        >
-          Abrir Convite
-        </Button>
-        <p className="text-sm text-gray-500 mt-2">Toque para abrir</p>
-      </div>
+      {/* A div do botão separada foi removida */}
     </Card>
   );
 };
