@@ -10,7 +10,7 @@ interface InvitationCardProps {
 export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
   return (
     <Card
-      className="relative w-full max-w-md mx-auto border-0 shadow-xl animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col"
+      className="relative w-full max-w-md mx-auto border-0 animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col bg-blush" // Removido shadow-xl
       // Removido o onClick do Card para que apenas o botão seja clicável
     >
       {/* Top Glittery Section */}
@@ -72,7 +72,7 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
         </div>
       </CardContent>
       {/* Botão "Abrir Convite" */}
-      <div className="p-8 pt-0 text-center relative z-10">
+      <div className="p-8 pt-0 text-center relative z-10 bg-blush">
         <Button
           onClick={onOpen}
           className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
