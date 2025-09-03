@@ -77,6 +77,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: { // Adicionado a nova família de fontes aqui
+        'great-vibes': ['"Great Vibes"', 'cursive'],
+        'serif': ['"Great Vibes"', 'serif'], // Mantendo 'serif' mas apontando para Great Vibes para consistência
+      },
       keyframes: {
         "accordion-down": {
           from: {

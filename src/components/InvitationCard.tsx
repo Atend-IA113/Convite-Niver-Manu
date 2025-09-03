@@ -10,7 +10,7 @@ interface InvitationCardProps {
 export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
   return (
     <Card
-      className="relative w-full max-w-md mx-auto border-0 animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col bg-blush" // Removido shadow-xl
+      className="relative w-full max-w-md mx-auto border-0 animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col bg-blush"
       // Removido o onClick do Card para que apenas o botão seja clicável
     >
       {/* Top Glittery Section */}
@@ -30,13 +30,13 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
           />
         ))}
         {/* "15" text */}
-        <span className="absolute text-rose-gold-dark text-[150px] font-bold leading-none z-10">
+        <span className="absolute text-white text-[150px] font-bold leading-none z-10">
           15
         </span>
         {/* "Anos" text with typing animation */}
         <TypingText
           text="Anos"
-          className="absolute text-rose-gold-dark text-7xl font-serif italic z-20"
+          className="absolute text-rose-gold-dark text-7xl font-great-vibes italic z-20" // Aplicado font-great-vibes
           style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         />
       </div>
@@ -52,7 +52,7 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
         </p>
 
         {/* Name */}
-        <h2 className="text-5xl font-serif italic text-rose-gold-dark mb-8">
+        <h2 className="text-5xl font-great-vibes italic text-rose-gold-dark mb-8"> {/* Aplicado font-great-vibes */}
           Emanuelle
         </h2>
 
