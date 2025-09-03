@@ -3,7 +3,7 @@ import { InvitationCard } from "@/components/InvitationCard";
 import { InvitationMenu } from "@/components/InvitationMenu";
 import { LocationPage } from "@/components/LocationPage";
 import { ConfirmationPage } from "@/components/ConfirmationPage";
-import { GiftListPage } from "@/components/GiftListPage/GiftListPage";
+import { GiftListPage } from "@/components/GiftListPage"; // Caminho corrigido
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
