@@ -53,28 +53,6 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
           Emanuelle
         </h2>
 
-        {/* Date, Time, Location */}
-        <div className="space-y-4 mb-8">
-          <div className="flex justify-center items-center text-rose-gold-dark text-sm">
-            <span className="border-b border-rose-gold-medium w-1/4 mr-2"></span>
-            <span>SÁBADO</span>
-            <span className="border-b border-rose-gold-medium w-1/4 ml-2"></span>
-          </div>
-          <div className="flex justify-center items-center text-rose-gold-dark text-2xl font-bold">
-            <span className="mr-2">DEZEMBRO</span>
-            <span className="text-5xl">15</span>
-            <span className="ml-2">2024</span>
-          </div>
-          <div className="flex justify-center items-center text-rose-gold-dark text-sm">
-            <span className="border-b border-rose-gold-medium w-1/4 mr-2"></span>
-            <span>19:00</span>
-            <span className="border-b border-rose-gold-medium w-1/4 ml-2"></span>
-          </div>
-          <p className="text-sm text-rose-gold-dark mt-4">
-            Rua das Flores, 123 - Cidade Feliz
-          </p>
-        </div>
-
         {/* Confetti at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden">
           {[...Array(50)].map((_, i) => (
