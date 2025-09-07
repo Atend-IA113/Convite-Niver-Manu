@@ -25,7 +25,7 @@ export const GiftListPage = ({ onBack }: GiftListPageProps) => {
 
         <CardContent className="space-y-4 text-gray-700">
           <p className="text-lg">
-            Sua presença já é o maior presente! Mas se você quiser nos presentear, aqui estão algumas sugestões:
+            Sua presença já é o maior presente! Mas se você quiser me presentear, aqui estão algumas sugestões que escolhi:
           </p>
           <div className="flex items-center text-xl font-semibold">
             <Gift className="w-6 h-6 mr-2 text-rose-500" />
