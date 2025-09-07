@@ -32,13 +32,13 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
             <span>Salão de Festas Alegria</span>
           </div>
           <p>
-            Rua das Flores, 123 - Bairro Jardim Encantado, Cidade Feliz - Estado Alegre
+            Rua Mitugo Miyabayashi, 1229 - Parque das Grevileas, Maringá
           </p>
           <p>
-            Data: 15 de Dezembro de 2024
+            Data: 12/10/2025
           </p>
           <p>
-            Horário: 19:00
+            Horário: 17:00
           </p>
           <a
             href="https://maps.app.goo.gl/your-location-link" // Replace with actual Google Maps link
