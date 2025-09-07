@@ -38,7 +38,7 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
         <div className="relative z-20 w-full flex flex-col items-center mt-auto mb-16"> {/* Adicionado mt-auto e mb-16 */}
           <Button
             onClick={onOpen}
-            className="w-full max-w-xs h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
+            className="w-full max-w-xs h-12 bg-rose-400 text-white border border-rose-400 transition-all duration-300 text-lg font-semibold"
           >
             Abrir Convite
           </Button>
