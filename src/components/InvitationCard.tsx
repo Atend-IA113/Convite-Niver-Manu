@@ -32,10 +32,10 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
 
       {/* Main Content Section with Button - agora com fundo transparente para mostrar a imagem do Card */}
       <CardContent
-        className="flex-grow p-8 text-center relative z-10 flex flex-col justify-center items-center bg-transparent"
+        className="flex-grow p-8 text-center relative z-10 flex flex-col items-center bg-transparent"
       >
         {/* Content (Button and text) */}
-        <div className="relative z-20 w-full flex flex-col items-center">
+        <div className="relative z-20 w-full flex flex-col items-center mt-auto mb-16"> {/* Adicionado mt-auto e mb-16 */}
           <Button
             onClick={onOpen}
             className="w-full max-w-xs h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
