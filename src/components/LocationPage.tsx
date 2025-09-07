@@ -18,7 +18,7 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
           >
             <ArrowLeft className="w-6 h-6 text-rose-500" />
           </Button>
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-rose-500 to-amber-500 bg-clip-text text-transparent ml-4">
+          <h2 className="text-3xl font-bold text-invitation-title ml-4">
             Localização
           </h2>
         </div>
@@ -44,7 +44,7 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
             href="https://www.google.com/maps/search/?api=1&query=Rua+Mitugo+Miyabayashi,+1229,+Parque+das+Grevileas,+Maringá" // Link de pesquisa do Google Maps
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 mt-4"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-invitation-title text-white hover:bg-invitation-title/90 mt-4"
           >
             Ver no Google Maps
           </a>

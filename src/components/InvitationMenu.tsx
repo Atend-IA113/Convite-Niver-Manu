@@ -10,7 +10,7 @@ export const InvitationMenu = ({ onPageChange }: InvitationMenuProps) => {
   return (
     <Card className="w-full max-w-md mx-auto bg-gradient-to-br from-white to-invitation-medium-pink border-0 shadow-xl">
       <CardContent className="p-8 text-center">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-rose-500 to-amber-500 bg-clip-text text-transparent mb-6">
+        <h2 className="text-3xl font-bold text-invitation-title mb-6">
           Menu do Convite
         </h2>
         <div className="space-y-4">

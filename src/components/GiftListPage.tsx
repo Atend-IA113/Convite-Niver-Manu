@@ -18,7 +18,7 @@ export const GiftListPage = ({ onBack }: GiftListPageProps) => {
           >
             <ArrowLeft className="w-6 h-6 text-rose-500" />
           </Button>
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-rose-500 to-amber-500 bg-clip-text text-transparent ml-4">
+          <h2 className="text-3xl font-bold text-invitation-title ml-4">
             Lista de Presentes
           </h2>
         </div>

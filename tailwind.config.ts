@@ -74,6 +74,7 @@ export default {
         // Novas cores personalizadas
         "invitation-light-pink": "hsl(var(--invitation-light-pink))",
         "invitation-medium-pink": "hsl(var(--invitation-medium-pink))",
+        "invitation-title": "#7a413a", // Nova cor para títulos
       },
       borderRadius: {
         lg: "var(--radius)",
