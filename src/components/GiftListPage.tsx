@@ -23,20 +23,21 @@ export const GiftListPage = ({ onBack }: GiftListPageProps) => {
           </h2>
         </div>
 
-        <CardContent className="space-y-4 text-gray-700">
+        <CardContent className="space-y-6 text-center text-gray-700">
           <p className="text-lg">
-            Sua presença já é o maior presente! Mas se você quiser me presentear, aqui estão algumas sugestões que escolhi:
+            Sua presença já é o maior presente! Mas se você quiser me presentear, clique no botão abaixo para acessar a lista de presentes.
           </p>
-          <div className="flex items-center text-xl font-semibold">
-            <Gift className="w-6 h-6 mr-2 text-rose-500" />
-            <span>Sugestões de Presentes:</span>
-          </div>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Presentes em dinheiro (PIX: emanuelle.aniversario@email.com)</li>
-            <li>Vale-presente em lojas de departamento</li>
-            <li>Itens para casa (decoração, utensílios)</li>
-            <li>Experiências (jantar, passeio)</li>
-          </ul>
+          
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 py-2 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white mt-4"
+          >
+            <Gift className="w-5 h-5 mr-2" />
+            Clique aqui para presentear
+          </a>
+
           <p className="text-md mt-4">
             Agradecemos de coração, e espero por você!
           </p>
