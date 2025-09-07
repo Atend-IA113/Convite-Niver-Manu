@@ -9,10 +9,11 @@ interface InvitationCardProps {
 export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
   return (
     <Card
-      className="relative w-full max-w-md mx-auto border-0 animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col bg-blush"
+      className="relative w-full max-w-md mx-auto border-0 animate-fade-in-up overflow-hidden min-h-[650px] flex flex-col bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('/fundo-convite.png')` }}
     >
-      {/* Top Glittery Section */}
-      <div className="relative h-[250px] bg-blush flex items-center justify-center overflow-hidden">
+      {/* Top Glittery Section - agora com fundo transparente para mostrar a imagem do Card */}
+      <div className="relative h-[250px] flex items-center justify-center overflow-hidden bg-transparent">
         {/* Sparkles for glitter effect */}
         {[...Array(30)].map((_, i) => (
           <Sparkles
@@ -29,10 +30,9 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
         ))}
       </div>
 
-      {/* Main Content Section with Button */}
+      {/* Main Content Section with Button - agora com fundo transparente para mostrar a imagem do Card */}
       <CardContent
-        className="flex-grow p-8 text-center relative z-10 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/fundo-convite.png')` }}
+        className="flex-grow p-8 text-center relative z-10 flex flex-col justify-center items-center bg-transparent"
       >
         {/* Content (Button and text) */}
         <div className="relative z-20 w-full flex flex-col items-center">
