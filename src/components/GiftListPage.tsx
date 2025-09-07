@@ -44,7 +44,7 @@ export const GiftListPage = ({ onBack }: GiftListPageProps) => {
           </a>
 
           <p className="text-md mt-4">
-            Agradecemos de coração, e espero por você!
+            Agradeço de coração, e espero por você!
           </p>
         </CardContent>
       </Card>
