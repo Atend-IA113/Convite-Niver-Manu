@@ -16,21 +16,21 @@ export const InvitationMenu = ({ onPageChange }: InvitationMenuProps) => {
         <div className="space-y-4">
           <Button
             onClick={() => onPageChange('location')}
-            className="w-full h-12 bg-invitation-title text-white hover:bg-invitation-title/90 transition-colors duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
           >
             <MapPin className="w-5 h-5 mr-2" />
             Localização
           </Button>
           <Button
             onClick={() => onPageChange('confirmation')}
-            className="w-full h-12 bg-invitation-title text-white hover:bg-invitation-title/90 transition-colors duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
           >
             <CheckCircle className="w-5 h-5 mr-2" />
             Confirmar Presença
           </Button>
           <Button
             onClick={() => onPageChange('gifts')}
-            className="w-full h-12 bg-invitation-title text-white hover:bg-invitation-title/90 transition-colors duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
           >
             <Gift className="w-5 h-5 mr-2" />
             Lista de Presentes

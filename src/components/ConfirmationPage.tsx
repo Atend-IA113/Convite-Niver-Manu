@@ -112,11 +112,11 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
                 type="button"
                 variant={attendance === "yes" ? "default" : "outline"}
                 onClick={() => setAttendance("yes")}
-                className={`flex-1 h-12 ${
+                className={`flex-1 h-12 transition-all duration-300 ${
                   attendance === "yes"
-                    ? "bg-invitation-title text-white"
+                    ? "bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white"
                     : "border-rose-200 text-gray-800 hover:bg-rose-50"
-                } hover:bg-invitation-title/90 transition-colors duration-300`}
+                }`}
               >
                 <CheckCircle className="w-5 h-5 mr-2" />
                 Sim, estarei presente!
@@ -126,11 +126,11 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
                 type="button"
                 variant={attendance === "no" ? "default" : "outline"}
                 onClick={() => setAttendance("no")}
-                className={`flex-1 h-12 ${
+                className={`flex-1 h-12 transition-all duration-300 ${
                   attendance === "no"
-                    ? "bg-invitation-title text-white"
+                    ? "bg-gray-400 text-white hover:bg-gray-500"
                     : "border-rose-200 text-gray-800 hover:bg-rose-50"
-                } hover:bg-invitation-title/90 transition-colors duration-300`}
+                }`}
               >
                 <Heart className="w-5 h-5 mr-2" />
                 Não poderei comparecer
@@ -171,7 +171,7 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
 
           <Button
             type="submit"
-            className="w-full h-12 bg-invitation-title text-white border-0 hover:bg-invitation-title/90 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
           >
             <Send className="w-5 h-5 mr-2" />
             Enviar Confirmação
