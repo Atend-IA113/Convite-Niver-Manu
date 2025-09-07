@@ -29,7 +29,7 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
           </p>
           <div className="flex items-center text-xl font-semibold">
             <MapPin className="w-6 h-6 mr-2 text-rose-500" />
-            <span>Salão de Festas Alegria</span>
+            <span>Chacara cantinho da mata</span> {/* Nome do local atualizado aqui */}
           </div>
           <p>
             Rua Mitugo Miyabayashi, 1229 - Parque das Grevileas, Maringá
