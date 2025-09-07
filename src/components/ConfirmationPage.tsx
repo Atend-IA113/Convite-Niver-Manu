@@ -114,9 +114,9 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
                 onClick={() => setAttendance("yes")}
                 className={`flex-1 h-12 ${
                   attendance === "yes"
-                    ? "bg-gradient-to-r from-rose-400 to-amber-400 text-white"
+                    ? "bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white"
                     : "border-rose-200 text-gray-800 hover:bg-rose-50"
-                }`}
+                } hover:opacity-90 transition-opacity duration-300`}
               >
                 <CheckCircle className="w-5 h-5 mr-2" />
                 Sim, estarei presente!
@@ -130,7 +130,7 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
                   attendance === "no"
                     ? "bg-gradient-to-r from-gray-400 to-gray-600 text-white"
                     : "border-rose-200 text-gray-800 hover:bg-rose-50"
-                }`}
+                } hover:opacity-90 transition-opacity duration-300`}
               >
                 <Heart className="w-5 h-5 mr-2" />
                 Não poderei comparecer
@@ -171,7 +171,7 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
 
           <Button
             type="submit"
-            className="w-full h-12 bg-gradient-to-r from-rose-400 to-amber-400 text-white border-0 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white border-0 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
           >
             <Send className="w-5 h-5 mr-2" />
             Enviar Confirmação
