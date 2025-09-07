@@ -30,13 +30,10 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
       </div>
 
       {/* Main Content Section with Button */}
-      <CardContent className="flex-grow p-8 text-center relative z-10 flex flex-col justify-center items-center">
-        {/* Background image div */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('/fundo-convite.png')` }}
-        />
-        
+      <CardContent
+        className="flex-grow p-8 text-center relative z-10 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/fundo-convite.png')` }}
+      >
         {/* Content (Button and text) */}
         <div className="relative z-20 w-full flex flex-col items-center">
           <Button
