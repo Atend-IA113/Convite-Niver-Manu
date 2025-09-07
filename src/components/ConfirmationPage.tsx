@@ -58,7 +58,7 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <Card className="bg-gradient-to-br from-white to-pink-100 border-0 shadow-xl p-8">
+      <Card className="bg-gradient-to-br from-white to-invitation-medium-pink border-0 shadow-xl p-8">
         <div className="flex items-center mb-6">
           <Button
             variant="ghost"

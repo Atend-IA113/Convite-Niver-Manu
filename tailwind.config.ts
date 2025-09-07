@@ -63,23 +63,26 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Custom colors for the invitation theme
-        blush: "#F4C2C2", // A light pink/rose color
-        champagne: "#F7E7CE", // A light gold/cream color
+        blush: "hsl(var(--invitation-light-pink))", // Usando a nova variável
+        champagne: "#F7E7CE", // Mantido, se não houver alteração
         "rose-gold": {
           light: "hsl(var(--rose-gold-light))",
           medium: "hsl(var(--rose-gold-medium))",
           dark: "hsl(var(--rose-gold-dark))",
           accent: "hsl(var(--rose-gold-accent))",
         },
+        // Novas cores personalizadas
+        "invitation-light-pink": "hsl(var(--invitation-light-pink))",
+        "invitation-medium-pink": "hsl(var(--invitation-medium-pink))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      fontFamily: { // Adicionado a nova família de fontes aqui
+      fontFamily: {
         'great-vibes': ['"Great Vibes"', 'cursive'],
-        'serif': ['"Great Vibes"', 'serif'], // Mantendo 'serif' mas apontando para Great Vibes para consistência
+        'serif': ['"Great Vibes"', 'serif'],
       },
       keyframes: {
         "accordion-down": {

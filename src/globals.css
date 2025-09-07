@@ -55,6 +55,10 @@
     --rose-gold-medium: 350 30% 80%; /* Slightly deeper pink-gold */
     --rose-gold-dark: 350 15% 40%; /* Muted, warm brown-pink for text */
     --rose-gold-accent: 350 40% 70%; /* More vibrant accent */
+
+    /* Novas cores personalizadas para o convite */
+    --invitation-light-pink: 350 50% 93%; /* #f4c3c2 */
+    --invitation-medium-pink: 350 20% 89%; /* #d8aeb0 */
   }
 
   .dark {

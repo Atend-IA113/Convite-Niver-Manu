@@ -31,7 +31,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-gold-light via-blush to-champagne overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br from-invitation-light-pink via-invitation-medium-pink to-champagne overflow-hidden relative">
       {/* Floating sparkles */}
       <div className="fixed inset-0 pointer-events-none">
         {[...Array(20)].map((_, i) => (
