@@ -30,7 +30,7 @@ export const GiftListPage = ({ onBack }: GiftListPageProps) => {
 
           <div className="text-center">
             <p className="font-semibold">Presente em dinheiro via PIX:</p>
-            <p className="text-rose-gold-dark font-mono bg-rose-50 p-2 rounded-md inline-block mt-2">emanuelle.aniversario@email.com</p>
+            <p className="text-rose-gold-dark font-mono bg-rose-50 p-2 rounded-md inline-block mt-2">4499828-0952</p>
           </div>
           
           <a
@@ -45,7 +45,7 @@ export const GiftListPage = ({ onBack }: GiftListPageProps) => {
 
           <p className="text-md mt-4">
             Agradecemos de coração, e espero por você!
-          </p>
+          p>
         </CardContent>
       </Card>
     </div>
