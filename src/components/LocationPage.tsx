@@ -29,7 +29,7 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
           </p>
           <div className="flex items-center text-xl font-semibold">
             <MapPin className="w-6 h-6 mr-2 text-rose-500" />
-            <span>Chacara cantinho da mata</span> {/* Nome do local atualizado aqui */}
+            <span>Chacara cantinho da mata</span>
           </div>
           <p>
             Rua Mitugo Miyabayashi, 1229 - Parque das Grevileas, Maringá
@@ -41,7 +41,7 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
             Horário: 17:00
           </p>
           <a
-            href="https://maps.app.goo.gl/your-location-link" // Replace with actual Google Maps link
+            href="https://www.google.com/maps/search/?api=1&query=Rua+Mitugo+Miyabayashi,+1229,+Parque+das+Grevileas,+Maringá" // Link de pesquisa do Google Maps
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 mt-4"
