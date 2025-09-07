@@ -114,7 +114,7 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
                 onClick={() => setAttendance("yes")}
                 className={`flex-1 h-12 ${
                   attendance === "yes"
-                    ? "bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white"
+                    ? "bg-gradient-to-r from-invitation-medium-pink to-invitation-title text-white"
                     : "border-rose-200 text-gray-800 hover:bg-rose-50"
                 } hover:opacity-90 transition-opacity duration-300`}
               >
@@ -171,7 +171,7 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
 
           <Button
             type="submit"
-            className="w-full h-12 bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white border-0 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-gradient-to-r from-invitation-medium-pink to-invitation-title text-white border-0 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
           >
             <Send className="w-5 h-5 mr-2" />
             Enviar Confirmação

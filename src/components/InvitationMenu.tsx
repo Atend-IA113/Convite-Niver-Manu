@@ -16,21 +16,21 @@ export const InvitationMenu = ({ onPageChange }: InvitationMenuProps) => {
         <div className="space-y-4">
           <Button
             onClick={() => onPageChange('location')}
-            className="w-full h-12 bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white hover:opacity-90 transition-opacity duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-gradient-to-r from-invitation-medium-pink to-invitation-title text-white hover:opacity-90 transition-opacity duration-300 text-lg font-semibold"
           >
             <MapPin className="w-5 h-5 mr-2" />
             Localização
           </Button>
           <Button
             onClick={() => onPageChange('confirmation')}
-            className="w-full h-12 bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white hover:opacity-90 transition-opacity duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-gradient-to-r from-invitation-medium-pink to-invitation-title text-white hover:opacity-90 transition-opacity duration-300 text-lg font-semibold"
           >
             <CheckCircle className="w-5 h-5 mr-2" />
             Confirmar Presença
           </Button>
           <Button
             onClick={() => onPageChange('gifts')}
-            className="w-full h-12 bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white hover:opacity-90 transition-opacity duration-300 text-lg font-semibold"
+            className="w-full h-12 bg-gradient-to-r from-invitation-medium-pink to-invitation-title text-white hover:opacity-90 transition-opacity duration-300 text-lg font-semibold"
           >
             <Gift className="w-5 h-5 mr-2" />
             Lista de Presentes

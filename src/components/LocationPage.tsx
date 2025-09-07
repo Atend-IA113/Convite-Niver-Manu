@@ -44,7 +44,7 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
             href="https://www.google.com/maps/search/?api=1&query=Rua+Mitugo+Miyabayashi,+1229,+Parque+das+Grevileas,+Maringá" // Link de pesquisa do Google Maps
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-gradient-to-r from-invitation-light-pink to-invitation-medium-pink text-white hover:opacity-90 mt-4"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-gradient-to-r from-invitation-medium-pink to-invitation-title text-white hover:opacity-90 mt-4"
           >
             Ver no Google Maps
           </a>
