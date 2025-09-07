@@ -4,8 +4,9 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, CheckCircle, Heart, Send } from "lucide-react";
+import { ArrowLeft, CheckCircle, Heart, Loader2, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ConfirmationPageProps {
   onBack: () => void;
@@ -17,9 +18,10 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
   const [attendance, setAttendance] = useState<"yes" | "no" | null>(null);
   const [companions, setCompanions] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!name || !phone || !attendance) {
@@ -31,29 +33,43 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
       return;
     }
 
-    // Here you would typically send the data to a backend
-    const confirmationData = {
-      name,
-      phone,
-      attendance,
-      companions,
-      message,
-      timestamp: new Date().toISOString()
-    };
+    setLoading(true);
+    try {
+      const { error } = await supabase
+        .from('confirmations')
+        .insert([{ name, phone, attendance, companions, message }]);
 
-    console.log("Confirmação enviada:", confirmationData);
-    
-    toast({
-      title: "Confirmação enviada!",
-      description: `Obrigada por confirmar sua presença, ${name}! 💕`,
-    });
+      if (error) {
+        console.error("Error inserting data:", error);
+        toast({
+          title: "Erro ao confirmar",
+          description: "Ocorreu um erro ao enviar sua confirmação. Tente novamente.",
+          variant: "destructive"
+        });
+        return;
+      }
+      
+      toast({
+        title: "Confirmação enviada!",
+        description: `Obrigada por confirmar sua presença, ${name}! 💕`,
+      });
 
-    // Reset form
-    setName("");
-    setPhone("");
-    setAttendance(null);
-    setCompanions("");
-    setMessage("");
+      // Reset form
+      setName("");
+      setPhone("");
+      setAttendance(null);
+      setCompanions("");
+      setMessage("");
+    } catch (error) {
+      console.error("Unexpected error:", error);
+      toast({
+        title: "Erro inesperado",
+        description: "Ocorreu um erro inesperado. Por favor, tente novamente.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -171,10 +187,15 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
 
           <Button
             type="submit"
+            disabled={loading}
             className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
           >
-            <Send className="w-5 h-5 mr-2" />
-            Enviar Confirmação
+            {loading ? (
+              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+            ) : (
+              <Send className="w-5 h-5 mr-2" />
+            )}
+            {loading ? "Enviando..." : "Enviar Confirmação"}
           </Button>
 
           <p className="text-center text-sm text-gray-500">
