@@ -9,7 +9,7 @@ interface InvitationMenuProps {
 export const InvitationMenu = ({ onPageChange }: InvitationMenuProps) => {
   return (
     <Card
-      className="relative w-full max-w-3xl mx-auto border-0 shadow-xl overflow-hidden min-h-[650px] flex flex-col bg-cover bg-center bg-no-repeat"
+      className="relative w-full max-w-4xl mx-auto border-0 shadow-xl overflow-hidden min-h-[650px] flex flex-col bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url('/menu-background.png')` }}
     >
       <CardContent className="flex-grow p-8 text-center relative z-10 flex flex-col items-center bg-transparent">
