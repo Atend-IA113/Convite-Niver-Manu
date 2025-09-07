@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
-// TypingText não é mais necessário, pois o texto "Anos" será removido
-// import { TypingText } from "@/components/TypingText"; 
 
 interface InvitationCardProps {
   onOpen: () => void;
@@ -29,23 +27,29 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
             }}
           />
         ))}
-        {/* O texto "15" e "Anos" foi removido daqui */}
       </div>
 
       {/* Main Content Section with Button */}
-      <CardContent className="flex-grow p-8 text-center relative z-10 bg-blush flex flex-col justify-center items-center"> {/* Adicionado justify-center e items-center */}
-        {/* O texto descritivo e o nome "Emanuelle" foram removidos daqui */}
+      <CardContent className="flex-grow p-8 text-center relative z-10 flex flex-col justify-center items-center">
+        {/* Background image div */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/fundo-convite.png')` }}
+        />
         
-        <Button
-          onClick={onOpen}
-          className="w-full max-w-xs h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
-        >
-          Abrir Convite
-        </Button>
-        <p className="text-sm text-gray-500 mt-2">Toque para abrir</p>
+        {/* Content (Button and text) */}
+        <div className="relative z-20 w-full flex flex-col items-center">
+          <Button
+            onClick={onOpen}
+            className="w-full max-w-xs h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white transition-all duration-300 text-lg font-semibold"
+          >
+            Abrir Convite
+          </Button>
+          <p className="text-sm text-gray-500 mt-2">Toque para abrir</p>
+        </div>
 
         {/* Confetti at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden z-20">
           {[...Array(50)].map((_, i) => (
             <div
               key={i}
@@ -59,7 +63,6 @@ export const InvitationCard = ({ onOpen }: InvitationCardProps) => {
           ))}
         </div>
       </CardContent>
-      {/* A div do botão separada foi removida */}
     </Card>
   );
 };
