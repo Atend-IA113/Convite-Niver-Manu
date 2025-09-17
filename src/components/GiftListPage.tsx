@@ -34,10 +34,10 @@ export const GiftListPage = ({ onBack }: GiftListPageProps) => {
           </div>
           
           <a
-            href="https://quinze-anos-btn8.listaideal.com.br/pt" // Link atualizado
+            href="https://quinze-anos-btn8.listaideal.com.br/pt"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 py-2 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white mt-4"
+            className="flex w-full items-center justify-center rounded-md text-lg font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-4 py-2 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white mt-4"
           >
             <Gift className="w-5 h-5 mr-2" />
             Clique aqui para presentear
