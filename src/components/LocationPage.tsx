@@ -40,7 +40,7 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
           <p>
             Horário: 17:00
           </p>
-          <p className="text-md font-medium text-rose-gold-dark">
+          <p className="text-md font-medium text-red-600">
             Nossa festa vai ter piscina e começa cedinho, traga roupa de banho pra aproveitarmos bem o dia, combinado!!
           </p>
           <a
