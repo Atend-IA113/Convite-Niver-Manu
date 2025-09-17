@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, CheckCircle, Heart, Loader2, Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { ArrowLeft } from "lucide-react";
 
 interface ConfirmationPageProps {
   onBack: () => void;
@@ -15,61 +16,43 @@ interface ConfirmationPageProps {
 export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [attendance, setAttendance] = useState<"yes" | "no" | null>(null);
+  const [attendance, setAttendance] = useState("");
   const [companions, setCompanions] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setLoading(true);
+
     if (!name || !phone || !attendance) {
-      toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive"
-      });
+      toast.error("Por favor, preencha todos os campos obrigatórios.");
+      setLoading(false);
       return;
     }
 
-    setLoading(true);
-    try {
-      const { error } = await supabase
-        .from('confirmations')
-        .insert([{ name, phone, attendance, companions, message }]);
+    const { error } = await supabase.from("confirmations").insert([
+      {
+        name,
+        phone,
+        attendance,
+        companions: attendance === "yes" ? companions : null,
+        message,
+      },
+    ]);
 
-      if (error) {
-        console.error("Error inserting data:", error);
-        toast({
-          title: "Erro ao confirmar",
-          description: "Ocorreu um erro ao enviar sua confirmação. Tente novamente.",
-          variant: "destructive"
-        });
-        return;
-      }
-      
-      toast({
-        title: "Confirmação enviada!",
-        description: `Obrigada por confirmar sua presença, ${name}! 💕`,
-      });
-
-      // Reset form
+    if (error) {
+      toast.error("Erro ao enviar confirmação: " + error.message);
+      console.error("Erro ao enviar confirmação:", error);
+    } else {
+      toast.success("Confirmação enviada com sucesso!");
       setName("");
       setPhone("");
-      setAttendance(null);
+      setAttendance("");
       setCompanions("");
       setMessage("");
-    } catch (error) {
-      console.error("Unexpected error:", error);
-      toast({
-        title: "Erro inesperado",
-        description: "Ocorreu um erro inesperado. Por favor, tente novamente.",
-        variant: "destructive"
-      });
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   return (
@@ -84,124 +67,106 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
             <ArrowLeft className="w-6 h-6 text-rose-500" />
           </Button>
           <h2 className="text-3xl font-bold text-invitation-title ml-4">
-            Confirmar Presença
+            Confirmação de Presença
           </h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-4">
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <Label htmlFor="name" className="text-gray-800 font-semibold">
-                Nome completo *
+              <Label htmlFor="name" className="text-lg text-gray-700">
+                Seu Nome Completo
               </Label>
               <Input
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mt-1 bg-white/70 border-rose-200 focus:border-rose-400"
-                placeholder="Seu nome completo"
+                placeholder="Ex: Maria da Silva"
+                className="mt-2 p-3 border-rose-300 focus:border-rose-500 focus:ring-rose-500"
                 required
               />
             </div>
 
             <div>
-              <Label htmlFor="phone" className="text-gray-800 font-semibold">
-                Telefone/WhatsApp *
+              <Label htmlFor="phone" className="text-lg text-gray-700">
+                Seu Telefone (com DDD)
               </Label>
               <Input
                 id="phone"
+                type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="mt-1 bg-white/70 border-rose-200 focus:border-rose-400"
-                placeholder="(44) 99999-9999"
+                placeholder="Ex: (99) 99999-9999"
+                className="mt-2 p-3 border-rose-300 focus:border-rose-500 focus:ring-rose-500"
                 required
               />
             </div>
-          </div>
 
-          <div>
-            <Label className="text-gray-800 font-semibold mb-3 block">
-              Você confirma sua presença? *
-            </Label>
-            <div className="flex flex-wrap gap-4"> {/* Adicionado flex-wrap aqui */}
-              <Button
-                type="button"
-                variant={attendance === "yes" ? "default" : "outline"}
-                onClick={() => setAttendance("yes")}
-                className={`flex-1 h-12 transition-all duration-300 ${
-                  attendance === "yes"
-                    ? "bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white"
-                    : "border-rose-200 text-gray-800 hover:bg-rose-50"
-                }`}
-              >
-                <CheckCircle className="w-5 h-5 mr-2" />
-                Sim, estarei presente!
-              </Button>
-              
-              <Button
-                type="button"
-                variant={attendance === "no" ? "default" : "outline"}
-                onClick={() => setAttendance("no")}
-                className={`flex-1 h-12 transition-all duration-300 ${
-                  attendance === "no"
-                    ? "bg-gray-400 text-white hover:bg-gray-500"
-                    : "border-rose-200 text-gray-800 hover:bg-rose-50"
-                }`}
-              >
-                <Heart className="w-5 h-5 mr-2" />
-                Não poderei comparecer
-              </Button>
-            </div>
-          </div>
-
-          {attendance === "yes" && (
             <div>
-              <Label htmlFor="companions" className="text-gray-800 font-semibold">
-                Acompanhantes
-              </Label>
-              <Input
-                id="companions"
-                value={companions}
-                onChange={(e) => setCompanions(e.target.value)}
-                className="mt-1 bg-white/70 border-rose-200 focus:border-rose-400"
-                placeholder="Nome dos acompanhantes (se houver)"
-              />
-              <p className="text-sm text-gray-500 mt-1">
-                Informe os nomes dos acompanhantes que virão com você
-              </p>
+              <Label className="text-lg text-gray-700">Você irá comparecer?</Label>
+              <RadioGroup
+                value={attendance}
+                onValueChange={setAttendance}
+                className="flex space-x-4 mt-2"
+                required
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="yes" id="r1" className="text-rose-500" />
+                  <Label htmlFor="r1" className="text-base text-gray-700">
+                    Sim, com certeza!
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="no" id="r2" className="text-rose-500" />
+                  <Label htmlFor="r2" className="text-base text-gray-700">
+                    Não poderei ir
+                  </Label>
+                </div>
+              </RadioGroup>
             </div>
-          )}
 
-          <div>
-            <Label htmlFor="message" className="text-gray-800 font-semibold">
-              Mensagem especial (opcional)
-            </Label>
-            <Textarea
-              id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="mt-1 bg-white/70 border-rose-200 focus:border-rose-400 min-h-[100px]"
-              placeholder="Deixe uma mensagem carinhosa para a Emanuelle..."
-            />
-          </div>
-
-          <Button
-            type="submit"
-            disabled={loading}
-            className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
-          >
-            {loading ? (
-              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-            ) : (
-              <Send className="w-5 h-5 mr-2" />
+            {attendance === "yes" && (
+              <div>
+                <Label htmlFor="companions" className="text-lg text-gray-700">
+                  Quantos acompanhantes (adultos e crianças)?
+                </Label>
+                <Input
+                  id="companions"
+                  type="number"
+                  value={companions}
+                  onChange={(e) => setCompanions(e.target.value)}
+                  placeholder="Ex: 2"
+                  className="mt-2 p-3 border-rose-300 focus:border-rose-500 focus:ring-rose-500"
+                />
+              </div>
             )}
-            {loading ? "Enviando..." : "Enviar Confirmação"}
-          </Button>
 
-          <p className="text-center text-sm text-gray-500">
-            * Campos obrigatórios
-          </p>
-        </form>
+            <div>
+              <Label htmlFor="message" className="text-lg text-gray-700">
+                Deixe uma mensagem para a Emanuelle (opcional)
+              </Label>
+              <Textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Ex: Parabéns, Emanuelle! Mal posso esperar para celebrar com você!"
+                className="mt-2 p-3 border-rose-300 focus:border-rose-500 focus:ring-rose-500 min-h-[100px]"
+              />
+            </div>
+            
+            <p className="text-md font-medium text-red-600 text-center mb-4">
+              Nossa festa vai ter piscina e começa cedinho, traga roupa de banho pra aproveitarmos bem o dia, combinado!! 🏊‍♀️🎉
+            </p>
+
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full h-12 bg-rose-300 text-rose-gold-dark border border-rose-400 hover:bg-rose-400 hover:text-white hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 text-lg font-semibold"
+            >
+              {loading ? "Enviando..." : "Confirmar Presença"}
+            </Button>
+          </form>
+        </CardContent>
       </Card>
     </div>
   );
