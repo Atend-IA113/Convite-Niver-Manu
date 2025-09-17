@@ -40,6 +40,9 @@ export const LocationPage = ({ onBack }: LocationPageProps) => {
           <p>
             Horário: 17:00
           </p>
+          <p className="text-md font-medium text-rose-gold-dark">
+            Nossa festa vai ter piscina e começa cedinho, traga roupa de banho pra aproveitarmos bem o dia, combinado!!
+          </p>
           <a
             href="https://www.google.com/maps/search/?api=1&query=Rua+Mitugo+Miyabayashi,+1229,+Parque+das+Grevileas,+Maringá" // Link de pesquisa do Google Maps
             target="_blank"
