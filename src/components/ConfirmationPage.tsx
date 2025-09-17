@@ -123,7 +123,7 @@ export const ConfirmationPage = ({ onBack }: ConfirmationPageProps) => {
             <Label className="text-gray-800 font-semibold mb-3 block">
               Você confirma sua presença? *
             </Label>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4"> {/* Adicionado flex-wrap aqui */}
               <Button
                 type="button"
                 variant={attendance === "yes" ? "default" : "outline"}
